@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <partial name="~/Views/Shared/_Head.cshtml" />
+    </head>
+
+    <body class="theme-red">
+        <!-- PAGE LOADER -->
+        <partial name="~/Views/Shared/_PageLoader.cshtml" />
+
+        <!-- OVERLAY FOR SIDERS -->
+        <div class="overlay"></div>
+
+        <!-- SEARCH BAR -->
+        <partial name="~/Views/Shared/_SearchBar.cshtml" />
+
+        <!-- NAVBAR  -->
+        <partial name="~/Views/Shared/_Navbar.cshtml" />
+
+        <!-- Sidebars -->
+        <section>
+            <!-- LEFT SIDEBAR -->
+            <partial name="~/Views/Shared/_LeftSidebar.cshtml" />
+
+            <!-- RIGHT SIDEBAR -->
+            <partial name="~/Views/Shared/_RightSidebar.cshtml" />
+        </section>
+
+        <!-- BODY -->
+        <section class="content">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </section>
+
+        <!-- Scripts -->
+        <partial name="~/Views/Shared/_Scripts.cshtml" />
+    </body>
+</html>
