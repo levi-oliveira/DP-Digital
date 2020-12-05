@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DP-Digital.Domain.Candidato
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DP-Digital.Infra", "DP-Digital.Infra\DP-Digital.Infra.csproj", "{FBF684EA-828F-415D-9D34-39D5EEB5016B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DP-Digital.Domain.Colaboradores", "DP-Digital.Domain.Colaboradores\DP-Digital.Domain.Colaboradores.csproj", "{1E030D4B-64AB-4372-9429-19FF0A1BA973}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FBF684EA-828F-415D-9D34-39D5EEB5016B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBF684EA-828F-415D-9D34-39D5EEB5016B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBF684EA-828F-415D-9D34-39D5EEB5016B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E030D4B-64AB-4372-9429-19FF0A1BA973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E030D4B-64AB-4372-9429-19FF0A1BA973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E030D4B-64AB-4372-9429-19FF0A1BA973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E030D4B-64AB-4372-9429-19FF0A1BA973}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

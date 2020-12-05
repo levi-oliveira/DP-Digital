@@ -19,14 +19,14 @@ namespace DP_Digital.Domain.Candidatos.Handlers
             _candidatoRepository = candidatoRepository;
         }
 
-        public async Task<CommandResult> InserirAsync(InserirCommand request)
+        public async Task<CandidatoCommandResult> InserirAsync(InserirCommand request)
         {
             try
             {
                 Candidato candidato = GerarCandidato(request);
                 await _candidatoRepository.InserirAsync(candidato);
 
-                return new CommandResult("Candidato Inserido com Suacesso", candidato);
+                return new CandidatoCommandResult("Candidato Inserido com Suacesso", candidato);
 
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace DP_Digital.Domain.Candidatos.Handlers
 
 
 
-        public async Task<CommandResult> RemoverAsync(RemoverCommand request)
+        public async Task<CandidatoCommandResult> RemoverAsync(RemoverCommand request)
         {
             try
             {
@@ -53,7 +53,7 @@ namespace DP_Digital.Domain.Candidatos.Handlers
 
                  await _candidatoRepository.RemoverAsync(request.Id);
 
-                return new CommandResult("Removido com sucesso", null);
+                return new CandidatoCommandResult("Removido com sucesso", null);
             }
             catch (Exception ex)
             {
@@ -63,7 +63,7 @@ namespace DP_Digital.Domain.Candidatos.Handlers
         }
 
 
-        public async Task<CommandResult> AtualizarAsync(AlterarCommand request, Guid Id)
+        public async Task<CandidatoCommandResult> AtualizarAsync(AlterarCommand request, Guid Id)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace DP_Digital.Domain.Candidatos.Handlers
 
                 await _candidatoRepository.AtualizarAsync(candidato);
 
-                return new CommandResult("Removido com sucesso", null);
+                return new CandidatoCommandResult("Removido com sucesso", null);
 
             }
             catch (Exception)
@@ -91,12 +91,12 @@ namespace DP_Digital.Domain.Candidatos.Handlers
             }
         }
 
-        public async Task<CommandResult> ObterTodosAsync()
+        public async Task<CandidatoCommandResult> ObterTodosAsync()
         {
             try
             {
                var retorno = await _candidatoRepository.ObterTodosAsync();
-                return new CommandResult("Consulta Realizada com sucesso.", retorno);
+                return new CandidatoCommandResult("Consulta Realizada com sucesso.", retorno);
             }
             catch (Exception ex)
             {
@@ -107,7 +107,7 @@ namespace DP_Digital.Domain.Candidatos.Handlers
            
         }
 
-        public async Task<CommandResult> ObterPorIdAsync(Guid id)
+        public async Task<CandidatoCommandResult> ObterPorIdAsync(Guid id)
         {
             try
             {
@@ -119,7 +119,7 @@ namespace DP_Digital.Domain.Candidatos.Handlers
                     return null;
                 }
 
-                return new CommandResult("Consulta Realizada com sucesso.", retorno);
+                return new CandidatoCommandResult("Consulta Realizada com sucesso.", retorno);
             }
             catch (Exception ex)
             {
@@ -128,7 +128,7 @@ namespace DP_Digital.Domain.Candidatos.Handlers
             }
         }
 
-        public async Task<CommandResult> ObterPorNomeAsync(string nome)
+        public async Task<CandidatoCommandResult> ObterPorNomeAsync(string nome)
         {
             try
             {
@@ -140,7 +140,7 @@ namespace DP_Digital.Domain.Candidatos.Handlers
                     return null;
                 }
 
-                return new CommandResult("Consulta Realizada com sucesso.", retorno);
+                return new CandidatoCommandResult("Consulta Realizada com sucesso.", retorno);
             }
             catch (Exception ex)
             {

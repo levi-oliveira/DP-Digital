@@ -32,7 +32,7 @@ namespace DP_Digital.API.Controllers
 
                 if (result is null)
                 {
-                    CommandResult retorno = new CommandResult("Apresentou um erro", _candidatoHandler.Notifications);
+                    CandidatoCommandResult retorno = new CandidatoCommandResult("Apresentou um erro", _candidatoHandler.Notifications);
                     return BadRequest(retorno);
                 }
 
@@ -41,16 +41,15 @@ namespace DP_Digital.API.Controllers
             catch (Exception ex)
             {
 
-                CommandResult retorno = new CommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
+                CandidatoCommandResult retorno = new CandidatoCommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
                 return StatusCode(StatusCodes.Status500InternalServerError, retorno);
             }
 
     
         }
 
-
         [HttpGet]
-        [Route("v1/Candidato/ObterPorI/{id:Guid}")]
+        [Route("v1/Candidato/ObterPorID/{id:Guid}")]
         public async Task<IActionResult> ObterPorIdAsync(Guid id)
         {
             try
@@ -60,7 +59,7 @@ namespace DP_Digital.API.Controllers
 
                 if (result is null)
                 {
-                    CommandResult retorno = new CommandResult("Apresentou um erro", _candidatoHandler.Notifications);
+                    CandidatoCommandResult retorno = new CandidatoCommandResult("Apresentou um erro", _candidatoHandler.Notifications);
                     return BadRequest(retorno);
                 }
 
@@ -69,14 +68,13 @@ namespace DP_Digital.API.Controllers
             catch (Exception ex)
             {
 
-                CommandResult retorno = new CommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
+                CandidatoCommandResult retorno = new CandidatoCommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
                 return StatusCode(StatusCodes.Status500InternalServerError, retorno);
             }
         }
 
-
         [HttpGet]
-        [Route("v1/Candidato/ObterPorI/{nome}")]
+        [Route("v1/Candidato/ObterPorNome/{nome}")]
         public async Task<IActionResult> ObterPorIdAsync(string nome)
         {
             try
@@ -86,7 +84,7 @@ namespace DP_Digital.API.Controllers
 
                 if (result is null)
                 {
-                    CommandResult retorno = new CommandResult("Apresentou um erro", _candidatoHandler.Notifications);
+                    CandidatoCommandResult retorno = new CandidatoCommandResult("Apresentou um erro", _candidatoHandler.Notifications);
                     return BadRequest(retorno);
                 }
 
@@ -95,7 +93,7 @@ namespace DP_Digital.API.Controllers
             catch (Exception ex)
             {
 
-                CommandResult retorno = new CommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
+                CandidatoCommandResult retorno = new CandidatoCommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
                 return StatusCode(StatusCodes.Status500InternalServerError, retorno);
             }
         }
@@ -109,13 +107,13 @@ namespace DP_Digital.API.Controllers
 
                 if (parametros == null)
                 {
-                    CommandResult retorno = new CommandResult("Apresentou um erro", new List<Notification>() { new Notification("Dados de entrada inválidos.", "Command") });
+                    CandidatoCommandResult retorno = new CandidatoCommandResult("Apresentou um erro", new List<Notification>() { new Notification("Dados de entrada inválidos.", "Command") });
                     return BadRequest(retorno);
                 }
 
                 if (!parametros.ValidarCampos())
                 {
-                    CommandResult retorno = new CommandResult("Apresentou um erro",new List<Notification>() { new Notification("Id inválido", "BuscaOrigem") });
+                    CandidatoCommandResult retorno = new CandidatoCommandResult("Apresentou um erro",new List<Notification>() { new Notification("Id inválido", "BuscaOrigem") });
                     return BadRequest(retorno);
                 }
 
@@ -123,7 +121,7 @@ namespace DP_Digital.API.Controllers
 
                 if (result is null)
                 {
-                    CommandResult retorno = new CommandResult("Apresentou um erro",_candidatoHandler.Notifications);
+                    CandidatoCommandResult retorno = new CandidatoCommandResult("Apresentou um erro",_candidatoHandler.Notifications);
                     return BadRequest(retorno);
                 }
 
@@ -132,11 +130,10 @@ namespace DP_Digital.API.Controllers
             catch (Exception ex)
             {
 
-                CommandResult retorno = new CommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
+                CandidatoCommandResult retorno = new CandidatoCommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
                 return StatusCode(StatusCodes.Status500InternalServerError, retorno);
             }
         }
-
 
         [HttpPut]
         [Route("v1/Candidato/Alterar/{id:Guid}")]
@@ -147,13 +144,13 @@ namespace DP_Digital.API.Controllers
 
                 if (parametros == null)
                 {
-                    CommandResult retorno = new CommandResult("Apresentou um erro", new List<Notification>() { new Notification("Dados de entrada inválidos.", "Command") });
+                    CandidatoCommandResult retorno = new CandidatoCommandResult("Apresentou um erro", new List<Notification>() { new Notification("Dados de entrada inválidos.", "Command") });
                     return BadRequest(retorno);
                 }
 
                 if (!parametros.ValidarCampos())
                 {
-                    CommandResult retorno = new CommandResult("Apresentou um erro", new List<Notification>() { new Notification("Id inválido", "BuscaOrigem") });
+                    CandidatoCommandResult retorno = new CandidatoCommandResult("Apresentou um erro", new List<Notification>() { new Notification("Id inválido", "BuscaOrigem") });
                     return BadRequest(retorno);
                 }
 
@@ -161,7 +158,7 @@ namespace DP_Digital.API.Controllers
 
                 if (result is null)
                 {
-                    CommandResult retorno = new CommandResult("Apresentou um erro", _candidatoHandler.Notifications);
+                    CandidatoCommandResult retorno = new CandidatoCommandResult("Apresentou um erro", _candidatoHandler.Notifications);
                     return BadRequest(retorno);
                 }
 
@@ -170,12 +167,10 @@ namespace DP_Digital.API.Controllers
             catch (Exception ex)
             {
 
-                CommandResult retorno = new CommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
+                CandidatoCommandResult retorno = new CandidatoCommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
                 return StatusCode(StatusCodes.Status500InternalServerError, retorno);
             }
         }
-
-
 
         [HttpDelete]
         [Route("v1/Candidato/Remover")]
@@ -185,7 +180,7 @@ namespace DP_Digital.API.Controllers
             {
                 if (parametros == null)
                 {
-                    CommandResult retorno = new CommandResult("Apresentou um erro", new List<Notification>() { new Notification("Dados de entrada inválidos.", "Command") });
+                    CandidatoCommandResult retorno = new CandidatoCommandResult("Apresentou um erro", new List<Notification>() { new Notification("Dados de entrada inválidos.", "Command") });
                     return BadRequest(retorno);
                 }
 
@@ -193,7 +188,7 @@ namespace DP_Digital.API.Controllers
 
                 if (result is null)
                 {
-                    CommandResult retorno = new CommandResult("Apresentou um erro", _candidatoHandler.Notifications);
+                    CandidatoCommandResult retorno = new CandidatoCommandResult("Apresentou um erro", _candidatoHandler.Notifications);
                     return BadRequest(retorno);
                 }
 
@@ -202,7 +197,7 @@ namespace DP_Digital.API.Controllers
             catch (Exception ex)
             {
 
-                CommandResult retorno = new CommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
+                CandidatoCommandResult retorno = new CandidatoCommandResult("Erro interno no servidor", new List<Notification>() { new Notification($"{ex.Message}", "InternalServerError") });
                 return StatusCode(StatusCodes.Status500InternalServerError, retorno);
             }
         }

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DP-Digital.Domain.Candidato\DP-Digital.Domain.Candidatos.csproj" />
+    <ProjectReference Include="..\DP-Digital.Domain.Colaboradores\DP-Digital.Domain.Colaboradores.csproj" />
   </ItemGroup>
 
 </Project>

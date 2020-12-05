@@ -5,16 +5,16 @@ using System.Text;
 
 namespace DP_Digital.Domain.Candidatos.Commands
 {
-    public class CommandResult
+    public class CandidatoCommandResult
     {
-        public CommandResult(string mensagem, object data)
+        public CandidatoCommandResult(string mensagem, object data)
         {
             Sucesso = true;
             Data = data;
             Mensagem = mensagem;
         }
 
-        public CommandResult(string mensagem, IReadOnlyCollection<Notification> erros)
+        public CandidatoCommandResult(string mensagem, IReadOnlyCollection<Notification> erros)
         {
             Sucesso = false;
             Erros = erros;

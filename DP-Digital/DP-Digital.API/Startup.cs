@@ -1,8 +1,11 @@
 using DP_Digital.Domain.Candidatos;
 using DP_Digital.Domain.Candidatos.Handlers;
 using DP_Digital.Domain.Candidatos.Interfaces;
+using DP_Digital.Domain.Colaboradores.Handlers;
+using DP_Digital.Domain.Colaboradores.Interfaces;
 using DP_Digital.Infra.Candidatos.Contexts;
 using DP_Digital.Infra.Candidatos.Repositorys;
+using DP_Digital.Infra.Colaboradores.Repositorys;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -41,9 +44,14 @@ namespace DP_Digital.API
 
             #region Handlers
             services.AddScoped<ICandidatoHandler, CandidatoHandler>();
-            services.AddScoped<ICandidatoRepository, CandidatoRepository>();
-            #endregion
+            services.AddScoped<IColaboradorHandler, ColaboradorHandler>();
 
+            #endregion
+            services.AddScoped<ICandidatoRepository, CandidatoRepository>();
+            services.AddScoped<IColaboradorRepository, ColaboradorRepository>();
+
+            #region Repository
+            #endregion
             services.AddControllers();
         }
 
