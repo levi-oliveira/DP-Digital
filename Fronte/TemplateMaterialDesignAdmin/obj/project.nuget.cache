@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9K98E6dPxRu3jPolIHmGpelP9RRtlENzGGKicQSGnv24AhhmWpUaHA1VZXADuXBqJXWOLUOp0lOL23BSH+oSfw==",
+  "dgSpecHash": "uK5wS+mHghNaNob8OUKD6dRI22chn0KVxd+oMH4Pt+8TCL6Z3g5LLZ7KfV3E3n+KDNZErS3ByUXARtmf8ywZuw==",
   "success": true,
   "projectFilePath": "C:\\Users\\l_san\\Documents\\GitHub\\DP-Digital\\Fronte\\TemplateMaterialDesignAdmin\\TemplateMaterialDesignAdmin.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\l_san\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512",
     "C:\\Users\\l_san\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []

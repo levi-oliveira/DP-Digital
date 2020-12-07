@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TemplateMaterialDesignAdmin.Services;
+using TemplateMaterialDesignAdmin.Services.Interfaces;
 
 namespace TemplateMaterialDesignAdmin
 {
@@ -15,11 +17,13 @@ namespace TemplateMaterialDesignAdmin
             Configuration = configuration;
         }
 
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddScoped<ICandidatoService, CandidatoService>();
+            services.AddScoped<IColaboradorService, ColaboradorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
