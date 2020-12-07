@@ -5,10 +5,6 @@ namespace TemplateMaterialDesignAdmin.Models.Candidato
 {
     public class Candidato
     {
-        public Candidato() => Id = Guid.NewGuid();
-
-        public Candidato(Guid id) => Id = id;
-
         public Guid Id { get; private set; }
         public string Nome { get; set; }
         public string Imagem { get; set; }

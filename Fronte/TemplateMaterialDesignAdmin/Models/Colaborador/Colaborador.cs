@@ -6,10 +6,6 @@ namespace TemplateMaterialDesignAdmin.Models.Colaborador
 {
     public class Colaborador : Pessoa
     {
-        public Colaborador() => Id = Guid.NewGuid();
-
-        public Colaborador(Guid id) => Id = id;
-
         public Guid Id { get; private set; }
         public EEstadoCivil EstadoCivil { get; set; }
         public ENacionalidade Nacionalidade { get; set; }
