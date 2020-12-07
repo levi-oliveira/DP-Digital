@@ -104,3 +104,4 @@ C:\Users\l_san\Documents\GitHub\DP-Digital\Fronte\TemplateMaterialDesignAdmin\ob
 C:\Users\l_san\Documents\GitHub\DP-Digital\Fronte\TemplateMaterialDesignAdmin\obj\Debug\netcoreapp3.1\TemplateMaterialDesignAdmin.genruntimeconfig.cache
 C:\Users\l_san\Documents\GitHub\DP-Digital\Fronte\TemplateMaterialDesignAdmin\obj\Debug\netcoreapp3.1\TemplateMaterialDesignAdmin.csproj.CopyComplete
 C:\Users\l_san\Documents\GitHub\DP-Digital\Fronte\TemplateMaterialDesignAdmin\obj\Debug\netcoreapp3.1\TemplateMaterialDesignAdmin.csprojAssemblyReference.cache
+C:\Users\l_san\Documents\GitHub\DP-Digital\Fronte\TemplateMaterialDesignAdmin\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

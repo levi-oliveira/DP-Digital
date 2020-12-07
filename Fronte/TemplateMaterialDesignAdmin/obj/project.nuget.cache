@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qyAsQ2Erzyrkm20sUcKCLf0zsEF9xljpyIkek+cuDNXB2DlRb5zu1gkUZfL8F7uPiAgd6cfHLD5JsWQtfyaIVw==",
+  "dgSpecHash": "9K98E6dPxRu3jPolIHmGpelP9RRtlENzGGKicQSGnv24AhhmWpUaHA1VZXADuXBqJXWOLUOp0lOL23BSH+oSfw==",
   "success": true,
   "projectFilePath": "C:\\Users\\l_san\\Documents\\GitHub\\DP-Digital\\Fronte\\TemplateMaterialDesignAdmin\\TemplateMaterialDesignAdmin.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\l_san\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
