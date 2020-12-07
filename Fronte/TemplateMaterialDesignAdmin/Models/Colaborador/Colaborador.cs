@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using TemplateMaterialDesignAdmin.Enums.Colaborador;
-using TemplateMaterialDesignAdmin.Models.Colaborador;
 
-namespace DP_Digital.Domain.Colaboradores.Models
+namespace TemplateMaterialDesignAdmin.Models.Colaborador
 {
     public class Colaborador : Pessoa
     {
