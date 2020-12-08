@@ -1,5 +1,4 @@
-﻿
-using DP_Digital.Domain.Candidatos.Interfaces;
+﻿using DP_Digital.Domain.Candidatos.Interfaces;
 using DP_Digital.Domain.Candidatos.Commands;
 using Flunt.Notifications;
 using System;
@@ -11,7 +10,6 @@ namespace DP_Digital.Domain.Candidatos.Handlers
 {
     public class CandidatoHandler : Notifiable,  ICandidatoHandler
     {
-
         private readonly ICandidatoRepository _candidatoRepository;
 
         public CandidatoHandler(ICandidatoRepository candidatoRepository)
@@ -37,7 +35,33 @@ namespace DP_Digital.Domain.Candidatos.Handlers
 
         }
 
+        public async Task<CandidatoCommandResult> AtualizarAsync(AlterarCommand request, Guid Id)
+        {
+            try
+            {
+                var candidatoId = await _candidatoRepository.ObterPorIdAsync(Id);
 
+                if (candidatoId == null)
+                {
+                    AddNotification("Candidato", "Não existe candidato com esse ID");
+                    return null;
+                }
+
+                request.Id = Id;
+
+                var candidato = GerarCandidatoAtualizar(request);
+
+                await _candidatoRepository.AtualizarAsync(candidato);
+
+                return new CandidatoCommandResult("Candidato alterado com sucesso", candidato);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         public async Task<CandidatoCommandResult> RemoverAsync(RemoverCommand request)
         {
@@ -59,35 +83,6 @@ namespace DP_Digital.Domain.Candidatos.Handlers
             {
 
                 throw ex;
-            }
-        }
-
-
-        public async Task<CandidatoCommandResult> AtualizarAsync(AlterarCommand request, Guid Id)
-        {
-            try
-            {
-                var candidatoId = await _candidatoRepository.ObterPorIdAsync(Id);
-
-                if (candidatoId == null)
-                {
-                    AddNotification("Candidato", "Não existe candidato com esse ID");
-                    return null;
-                }
-
-                request.Id = Id;
-
-                var candidato = GerarCandidatoAtualizar(request);
-
-                await _candidatoRepository.AtualizarAsync(candidato);
-
-                return new CandidatoCommandResult("Removido com sucesso", null);
-
-            }
-            catch (Exception)
-            {
-
-                throw;
             }
         }
 
@@ -161,7 +156,6 @@ namespace DP_Digital.Domain.Candidatos.Handlers
 
             return candidato;
         }
-
 
         private Candidato GerarCandidatoAtualizar(AlterarCommand request)
         {

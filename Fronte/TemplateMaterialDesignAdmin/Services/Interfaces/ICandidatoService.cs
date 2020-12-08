@@ -8,7 +8,7 @@ namespace TemplateMaterialDesignAdmin.Services.Interfaces
     public interface ICandidatoService
     {
         Task<CommandResult> Inserir(CandidatoInserirCommand command);
-        Task<CommandResult> Atualizar(CandidatoAtualizarCommand command);
+        Task<CommandResult> Atualizar(CandidatoInserirCommand command, Guid id);
         Task<CommandResult> Remover(CandidatoDeleteCommand command);
         Task<CommandResult> ObterTodos();
         Task<CommandResult> ObterPorId(Guid id);

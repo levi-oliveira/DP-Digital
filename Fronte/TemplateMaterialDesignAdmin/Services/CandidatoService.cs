@@ -46,7 +46,7 @@ namespace TemplateMaterialDesignAdmin.Services
             }
         }
 
-        public async Task<CommandResult> Atualizar(CandidatoAtualizarCommand command)
+        public async Task<CommandResult> Atualizar(CandidatoInserirCommand command, Guid id)
         {
             try
             {
@@ -60,10 +60,10 @@ namespace TemplateMaterialDesignAdmin.Services
 
                 using (client)
                 {
-                    httpResponse = await client.PutAsync(_settings.ENDPOINT_CANDIDATO_ALTERAR, httpContent);
+                    httpResponse = await client.PutAsync(_settings.ENDPOINT_CANDIDATO_ALTERAR + id, httpContent);
                 }
 
-                var response = httpResponse.Content.ReadAsStringAsync().ToString();
+                var response = httpResponse.Content.ReadAsStringAsync().Result;
                 var retorno = JsonConvert.DeserializeObject<CommandResult>(response);
                 return retorno;
             }
@@ -96,7 +96,7 @@ namespace TemplateMaterialDesignAdmin.Services
                     httpResponse = await client.SendAsync(request);
                 }
 
-                var response = httpResponse.Content.ReadAsStringAsync().ToString();
+                var response = httpResponse.Content.ReadAsStringAsync().Result;
                 var retorno = JsonConvert.DeserializeObject<CommandResult>(response);
                 return retorno;
             }
@@ -126,7 +126,7 @@ namespace TemplateMaterialDesignAdmin.Services
                     httpResponse = await client.SendAsync(request);
                 }
 
-                var response = httpResponse.Content.ReadAsStringAsync().ToString();
+                var response = httpResponse.Content.ReadAsStringAsync().Result;
                 var retorno = JsonConvert.DeserializeObject<CommandResult>(response);
                 return retorno;
             }
@@ -156,7 +156,7 @@ namespace TemplateMaterialDesignAdmin.Services
                     httpResponse = await client.SendAsync(request);
                 }
 
-                var response = httpResponse.Content.ReadAsStringAsync().ToString();
+                var response = httpResponse.Content.ReadAsStringAsync().Result;
                 var retorno = JsonConvert.DeserializeObject<CommandResult>(response);
                 return retorno;
             }
@@ -186,7 +186,7 @@ namespace TemplateMaterialDesignAdmin.Services
                     httpResponse = await client.SendAsync(request);
                 }
 
-                var response = httpResponse.Content.ReadAsStringAsync().ToString();
+                var response = httpResponse.Content.ReadAsStringAsync().Result;
                 var retorno = JsonConvert.DeserializeObject<CommandResult>(response);
                 return retorno;
             }

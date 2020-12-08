@@ -36,7 +36,7 @@ namespace TemplateMaterialDesignAdmin.Services
                     httpResponse = await client.PostAsync(_settings.ENDPOINT_COLABORADOR_INSERIR, httpContent);
                 }
 
-                var response = httpResponse.Content.ReadAsStringAsync().ToString();
+                var response = httpResponse.Content.ReadAsStringAsync().Result;
                 var retorno = JsonConvert.DeserializeObject<CommandResult>(response);
                 return retorno;
             }
@@ -76,7 +76,7 @@ namespace TemplateMaterialDesignAdmin.Services
                     httpResponse = await client.SendAsync(request);
                 }
 
-                var response = httpResponse.Content.ReadAsStringAsync().ToString();
+                var response = httpResponse.Content.ReadAsStringAsync().Result;
                 var retorno = JsonConvert.DeserializeObject<CommandResult>(response);
                 return retorno;
             }
@@ -106,7 +106,7 @@ namespace TemplateMaterialDesignAdmin.Services
                     httpResponse = await client.SendAsync(request);
                 }
 
-                var response = httpResponse.Content.ReadAsStringAsync().ToString();
+                var response = httpResponse.Content.ReadAsStringAsync().Result;
                 var retorno = JsonConvert.DeserializeObject<CommandResult>(response);
                 return retorno;
             }
