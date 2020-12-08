@@ -1,6 +1,6 @@
 ﻿namespace TemplateMaterialDesignAdmin.Models.Candidato
 {
-    public class Image
+    public class Imagem
     {
         public string Nome { get; set; }
         public string DadosBase64 { get; set; }

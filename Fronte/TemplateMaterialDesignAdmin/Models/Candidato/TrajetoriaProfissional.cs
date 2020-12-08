@@ -9,6 +9,6 @@ namespace TemplateMaterialDesignAdmin.Models.Candidato
         public DateTime DataInicio { get; set; }
         public DateTime? DataFim { get; set; }
         public string Descricao { get; set; }
-        public List<Image> Imagens { get; set; }
+        public List<Imagem> Imagens { get; set; }
     }
 }

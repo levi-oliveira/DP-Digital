@@ -26,7 +26,7 @@ namespace DP_Digital.Domain.Candidatos.Handlers
                 Candidato candidato = GerarCandidato(request);
                 await _candidatoRepository.InserirAsync(candidato);
 
-                return new CandidatoCommandResult("Candidato Inserido com Suacesso", candidato);
+                return new CandidatoCommandResult("Candidato Inserido com Sucesso", candidato);
 
             }
             catch (Exception ex)
